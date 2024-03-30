@@ -1,0 +1,121 @@
+@use 'variables';
+@use 'mixins';
+
+// Text styles
+
+.title-sm{
+    @include mixins.title(24px);
+}
+
+.title-md{
+    @include mixins.title(32px);
+}
+
+.title-lg{
+    @include mixins.title(48px);
+}
+
+.subtitle-sm{
+    @include mixins.subtitle(16px);
+}
+
+.subtitle-md{
+    @include mixins.subtitle(20px);
+}
+
+.subtitle-lg{
+    @include mixins.subtitle(24px);
+}
+
+.text-sm{
+    @include mixins.text(14px);
+}
+
+.text-md{
+    @include mixins.text(16px);
+}
+
+.text-lg{
+    @include mixins.text(18px);
+}
+
+.text-sm-light{
+    @include mixins.text(14px, variables.$secondary-color);
+}
+
+.text-md-light{
+    @include mixins.text(16px, variables.$secondary-color);
+}
+
+.text-lg-light{
+    @include mixins.text(18px, variables.$secondary-color);
+}
+
+// Buttons
+
+.btn-primary{
+    @include mixins.button;
+}
+
+.btn-success{
+    @include mixins.button(variables.$bg-gradient-success, variables.$primary-color, none);
+}
+
+.btn-danger{
+    @include mixins.button(transparent, variables.$danger-color, 1px solid variables.$danger-color);
+}
+
+// Icons
+
+.icon-armchair:before {
+    content: "\e900";
+    color: #fff;
+}
+.icon-arrow-full:before {
+    content: "\e901";
+    color: #fff;
+}
+.icon-arrow:before {
+    content: "\e902";
+    color: #fff;
+}
+.icon-cancel:before {
+    content: "\e903";
+    color: #fff;
+}
+.icon-film:before {
+    content: "\e904";
+    color: #fff;
+}
+.icon-globe:before {
+    content: "\e905";
+    color: #fff;
+}
+.icon-instagram:before {
+    content: "\e906";
+    color: #fff;
+}
+.icon-login:before {
+    content: "\e907";
+    color: #fff;
+}
+.icon-plus:before {
+    content: "\e908";
+    color: #fff;
+}
+.icon-profile:before {
+    content: "\e909";
+    color: #fff;
+}
+.icon-ticket:before {
+    content: "\e90a";
+    color: #fff;
+}
+.icon-tiktok:before {
+    content: "\e90b";
+    color: #fff;
+}
+.icon-x:before {
+    content: "\e90c";
+    color: #fff;
+}

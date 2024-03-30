@@ -1,0 +1,76 @@
+// COLORS
+
+$primary-color: #ebeff4;
+$secondary-color: #B0B6BF;
+$tertiary-color: #646B76;
+$success-color: #2AD755;
+$danger-color: #dc3545;
+$warning-color: #F17911;
+
+$bg-color-light: #14181c;
+$bg-color-dark: #0d0f12;
+$bg-gradient-light: linear-gradient(120deg, #69778B 0%, #5F6C7E 100%);
+$bg-gradient-dark: linear-gradient(120deg, #373E49 0%, #2B3442 100%);
+$bg-gradient-rainbow:   radial-gradient(190% 105% at 90% 55%, rgba(0, 45, 255, 0.10) 0%, rgba(0, 45, 255, 0.00) 100%), 
+                        radial-gradient(290% 105% at 70% 50%, rgba(125, 205, 229, 0.10) 0%, rgba(125, 205, 229, 0.00) 100%), 
+                        radial-gradient(70% 135% at 35% 40%, rgba(255, 215, 21, 0.05) 0%, rgba(255, 215, 21, 0.00) 100%), 
+                        radial-gradient(150% 85% at 15% 50%, rgba(255, 0, 0, 0.10) 0%, rgba(255, 0, 0, 0.00) 100%);
+$bg-gradient-success: linear-gradient(120deg, #2AD755 0%, #00C030 100%);
+
+$border-color-light: #B0B6BF;
+$border-color-dark: #556576;
+
+// TYPOGRAPHY
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url(/source/fonts/sf-pro-display_light.woff2) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url(/source/fonts/sf-pro-display_regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url(/source/fonts/sf-pro-display_medium.woff2) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url(/source/fonts/sf-pro-display_semibold.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url(/source/fonts/sf-pro-display_bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'icons';
+    src: url('../fonts/icons.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+$font-family: 'SF Pro Display', apple-system, Roboto, sans-serif;
+
+// BREAKPOINTS
+
+$breakpoints: (
+    "sm": "max-width: 575px",
+    "md": "(min-width: 576px) and (max-width: 991px)",
+    "lg": "min-width: 992px",
+);
