@@ -1,0 +1,123 @@
+@use 'variables';
+@use 'mixins';
+@use 'animations';
+
+header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+
+    .header-logo{
+        img{
+            display: block;
+            height: 100%;
+        }
+    }
+    .header-logo[aria-hidden="true"]{
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.menu{
+    display: flex;
+    gap: 16px;
+
+    .btn-dropdown{
+        &__select{
+            @include mixins.button-hover;
+
+            svg:last-child{
+                height: 8px;
+                width: 8px;
+            }
+        }
+    }
+
+    button.btn-success:last-child{
+        @include mixins.button-hover;
+
+        &::before{
+            background: linear-gradient(120deg, #2AD755, #00C030, #2AD755,
+            #00C030, #2AD755, #00C030, #2AD755);
+            background-size: 500% 500%;
+            transition: opacity 0.3s ease;
+            border-radius: 4px;
+        }
+
+        &:hover::before {
+            animation: gradient 4s ease infinite;
+            opacity: 1;
+        }
+
+        &:hover{
+            background: transparent;
+            border: none;
+        }
+    }
+}
+
+
+.btn-dropdown{
+    position: relative;
+
+    &__select[aria-expanded="true"]{
+        transition: all 0.3s ease;
+        background: variables.$bg-gradient-light;
+        border: 1px solid variables.$border-color-light;
+        color: variables.$secondary-color;
+    }
+
+    &__select[aria-expanded="true"] > svg{
+        transition: all 0.3s ease;
+        fill: variables.$secondary-color;
+    }
+
+    &__select[aria-expanded="true"] svg:last-child{
+        transition: transform 0.3s ease;
+        transform: rotate(-180deg);
+    }
+
+    &__select[aria-expanded="false"] svg:last-child{
+        transition: transform 0.3s ease;
+        transform: rotate(0deg);
+    }
+
+    &__select[aria-expanded="true"] + &__options{
+        visibility: visible;
+    }
+
+    &__select[aria-expanded="true"] + &__options .option-1{
+        animation: slideInY 0.2s ease forwards;
+    }
+
+    &__select[aria-expanded="true"] + &__options .option-2{
+        animation: slideInY 0.4s ease forwards;
+    }
+
+    &__select[aria-expanded="false"] + &__options .option-1{
+        animation: slideOutY 0.2s ease forwards;
+    }
+
+    &__select[aria-expanded="false"] + &__options .option-2{
+        animation: slideOutY 0.4s ease forwards;
+    }
+
+
+    &__options{
+        margin-top: 12px;
+        display: grid;
+        gap: 8px;
+        position: absolute;
+        visibility: hidden;
+        width: 100%;
+
+        &__option button{
+            width: 100%;
+            padding-inline: 14px;
+            @include mixins.button-hover;
+        }
+    }
+}

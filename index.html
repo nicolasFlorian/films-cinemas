@@ -1,13 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Films Cinemas</title>
-    <link rel="stylesheet" href="dist/styles/main.css">
-    <script src="dist/scripts/main.js" defer></script>
-</head>
-<body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Films Cinemas</title>
+        <link rel="stylesheet" href="dist/styles/main.css">
+        <script src="dist/scripts/main.js" defer></script>
+    </head>
     
-</body>
+    <body>
+        <header class="header section">
+            <div class="header-logo" aria-hidden="true">
+                <a href="#">
+                    <img src="dist/images/logo.svg" alt="Films Logo">
+                </a>
+            </div>
+            <nav class="menu">
+
+                <div class="btn-dropdown">
+
+                    <div class="btn-dropdown__select btn-primary" aria-expanded="false">
+                        <svg>
+                            <use xlink:href="dist/icons/symbol/sprite.svg#profile"></use>
+                        </svg>
+                        <span>ACESSAR</span>
+                        <svg>
+                            <use xlink:href="dist/icons/symbol/sprite.svg#arrow-full"></use>
+                        </svg>
+                    </div>
+
+                    <ul class="btn-dropdown__options" aria-hidden="true">
+                        <li class="btn-dropdown__options__option option-1">
+                            <button class="btn-primary">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#login"></use>
+                                </svg>
+                                <span>LOGIN</span>
+                            </button>
+                        </li>
+                        <li class="btn-dropdown__options__option option-2">
+                            <button class="btn-primary">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#ticket"></use>
+                                </svg>
+                                <span>INGRESSOS</span>
+                            </button>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <button class="btn-success">
+                    <svg>
+                        <use xlink:href="dist/icons/symbol/sprite.svg#film"></use>
+                    </svg>
+                    <span>EM CARTAZ</span>
+                </button>
+
+            </nav>
+        </header>
+
+        <section class="hero section">
+            <div class="hero__content__container">
+                <h1 class="hero__image__container">
+                    <img src="dist/images/logo.svg" alt="Films Logo">
+                </h1>
+                <div class="hero__text__container">
+                    <h2 class="title-lg sm-title-3">
+                        Seu novo cinema favorito
+                    </h2>
+                    <ul class="text-lg hero__list">
+                        <li>Faça postagens de filmes e tenha a chance de exibi-los. <a href="#" class="text-lg">saiba mais</a></li>
+                        <li>Assista aos clássicos mais amados e redescubra a arte do cinema.</li>
+                        <li>Assine um de nossos planos e tenha acesso ao nosso acervo.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hero__video__container">
+                <video autoplay loop playsinline preload="auto" class="hero__video__bg" muted>
+                    <source src="dist/videos/output.mp4" type="video/mp4" >
+                </video>
+            </div>
+        </section>
+
+        <section class="theaters section">
+            <div class="theaters__container">
+
+                <div class="theaters__container__buttons">
+                    <button class="theaters__button btn-primary" aria-selected="true" data-day-btn="12/04">
+                        <span class="button__day-text">Sex</span>
+                        <h5 class="button__day-number">12/04</h5>
+                    </button>
+                    <button class="theaters__button btn-primary" aria-selected="false" data-day-btn="13/04>
+                        <span class="button__day-text">Sab</span>
+                        <h5 class="button__day-number">13/04</h5>
+                    </button>
+                    <button class="theaters__button btn-primary" aria-selected="false" data-day-btn="14/04">
+                        <span class="button__day-text">Dom</span>
+                        <h5 class="button__day-number">14/04</h5>
+                    </button>
+                    <button class="theaters__button btn-primary" aria-selected="false" data-day-btn="15/04">
+                        <span class="button__day-text">Seg</span>
+                        <h5 class="button__day-number">15/04</h5>
+                    </button>
+                </div>
+
+                <div class="theaters__container__info">
+                    <ul class="theaters__info__list">
+                        <li class="info__item">
+                            <div class="icon-r__container">
+                                <span>R</span>
+                            </div>
+                            <span class="info__item__div"></span>
+                            <p>
+                                Requisitado
+                            </p>
+                        </li>
+                        <li class="info__item">
+                            <svg>
+                                <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                            </svg>
+                            <span class="info__item__div"></span>
+                            <p>
+                                Assentos
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="theaters__container__movies">
+                    <div class="movies__controls">
+                        <h3>Sala - 3</h3>
+                        <div class="controls__buttons">
+                            <svg aria-disabled="true">
+                                <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                            </svg>
+                            <svg aria-disabled="false">
+                                <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="movies__container__cards">
+                        <div class="card">
+                            <div class="card__image">
+                                <picture>
+                                    <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                    <img src="dist/images/capas/dune.jpg" alt="Anatomia de uma queda poster">
+                                </picture>
+                            </div>
+                            <h6 class="card__title">Dune - Parte 2</h6>
+                            <p class="card__time">167 mins</p>
+                            <div class="card__seats__container" data-number-seat="danger">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                </svg>
+                                <span>54/90</span>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+
 </html>

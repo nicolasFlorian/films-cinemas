@@ -1,0 +1,26 @@
+@keyframes gradient {
+    0% {background-position: 0% 50%;}
+    100% {background-position: 100% 50%;}
+}
+
+@keyframes slideInY {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutY {
+    0% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+}

@@ -58,64 +58,91 @@
 }
 
 .btn-success{
-    @include mixins.button(variables.$bg-gradient-success, variables.$primary-color, none);
+    @include mixins.button(variables.$bg-gradient-success, variables.$primary-color);
+    border: none;
 }
 
 .btn-danger{
     @include mixins.button(transparent, variables.$danger-color, 1px solid variables.$danger-color);
 }
 
-// Icons
+// Sizes
 
-.icon-armchair:before {
-    content: "\e900";
-    color: #fff;
+.section{
+    padding: 20px 40px;
 }
-.icon-arrow-full:before {
-    content: "\e901";
-    color: #fff;
+
+// Breakpoints
+
+.sm-text-1{
+    @include mixins.breakpoint('sm'){
+        @include mixins.text(14px);
+    };
 }
-.icon-arrow:before {
-    content: "\e902";
-    color: #fff;
+
+.sm-text-2{
+    @include mixins.breakpoint('sm'){
+        @include mixins.text;
+    };
 }
-.icon-cancel:before {
-    content: "\e903";
-    color: #fff;
+
+.sm-text-3{
+    @include mixins.breakpoint('sm'){
+        @include mixins.text(18px);
+    };
 }
-.icon-film:before {
-    content: "\e904";
-    color: #fff;
+
+.md-text-1{
+    @include mixins.breakpoint('md'){
+        @include mixins.text(14px);
+    };
 }
-.icon-globe:before {
-    content: "\e905";
-    color: #fff;
+
+.md-text-2{
+    @include mixins.breakpoint('md'){
+        @include mixins.text;
+    };
 }
-.icon-instagram:before {
-    content: "\e906";
-    color: #fff;
+
+.md-text-3{
+    @include mixins.breakpoint('md'){
+        @include mixins.text(18px);
+    };
 }
-.icon-login:before {
-    content: "\e907";
-    color: #fff;
+
+.sm-title-1{
+    @include mixins.breakpoint('sm'){
+        @include mixins.title(24px);
+    };
 }
-.icon-plus:before {
-    content: "\e908";
-    color: #fff;
+
+.sm-title-2{
+    @include mixins.breakpoint('sm'){
+        @include mixins.title;
+    };
 }
-.icon-profile:before {
-    content: "\e909";
-    color: #fff;
+
+.sm-title-3{
+    @include mixins.breakpoint('sm'){
+        @include mixins.title(48px);
+    };
 }
-.icon-ticket:before {
-    content: "\e90a";
-    color: #fff;
+
+.md-title-1{
+    @include mixins.breakpoint('md'){
+        @include mixins.title(24px);
+    };
 }
-.icon-tiktok:before {
-    content: "\e90b";
-    color: #fff;
+
+.md-title-2{
+    @include mixins.breakpoint('md'){
+        @include mixins.title;
+    };
 }
-.icon-x:before {
-    content: "\e90c";
-    color: #fff;
+
+.md-title-3{
+    @include mixins.breakpoint('md'){
+        @include mixins.title(48px);
+    };
 }
+

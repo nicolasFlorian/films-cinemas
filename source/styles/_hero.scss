@@ -1,0 +1,63 @@
+@use 'variables';
+@use 'mixins';
+
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+
+    .hero__content__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        max-width: 600px;
+        z-index: 2;
+    
+    
+        .hero__image__container{
+            width: 100%;
+    
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .hero__text__container{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+
+            .hero__list{
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                max-width: 500px;
+
+                >li{
+                    list-style: outside;
+                }
+            }
+        }
+    }
+
+    &__video__container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    &__video__bg{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.3;
+        mask: linear-gradient(0deg, transparent,white);
+    }
+}

@@ -1,16 +1,19 @@
+@use 'reset';
 @use 'variables';
 @use 'mixins';
+@use 'functions';
 @use 'shortcuts';
+@use 'header';
+@use 'hero';
+@use 'theaters';
 
-[class^="icon-"], [class*=" icon-"] {
-    font-family: 'icomoon' !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
+body{
+    background-color: variables.$bg-color-light;
+    display: grid;
+}
 
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+svg{
+    width: 15px;
+    height: 15px;
+    fill: variables.$primary-color;
 }
