@@ -10,6 +10,7 @@
 body{
     background-color: variables.$bg-color-light;
     display: grid;
+    gap: functions.rem(16);
 }
 
 svg{

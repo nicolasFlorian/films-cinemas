@@ -6,6 +6,9 @@
     align-items: center;
     justify-content: center;
     height: 80vh;
+    @include mixins.breakpoint('sm'){
+        height: auto;
+    }
 
     .hero__content__container{
         display: flex;
@@ -15,9 +18,11 @@
         max-width: 600px;
         z-index: 2;
     
-    
         .hero__image__container{
             width: 100%;
+            @include mixins.breakpoint('sm'){
+                width: 70%;
+            }
     
             img{
                 display: block;
@@ -37,6 +42,9 @@
                 flex-direction: column;
                 gap: 16px;
                 max-width: 500px;
+                @include mixins.breakpoint('sm'){
+                    max-width: 250px;
+                }
 
                 >li{
                     list-style: outside;
@@ -47,10 +55,15 @@
 
     &__video__container{
         position: absolute;
+        width: 100%;
+        height: 100%;
         top: 0;
-        left: 0;
         bottom: 0;
+        left: 0;
         right: 0;
+        @include mixins.breakpoint('sm'){
+            bottom: 150px;
+        }
     }
 
     &__video__bg{

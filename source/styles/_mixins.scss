@@ -1,11 +1,29 @@
 @use 'variables';
 
 
+// Breakpoint mixin
+
+@mixin breakpoint($user-value){
+    $map: map-get(variables.$breakpoints, $user-value);
+
+    @if $map{
+        @media (#{$map}) {
+            @content;
+        }
+    }@else{
+        @error "Breakpoint '#{$user-value}' not found in $breakpoints map.";
+    }
+
+};
+
 // Text mixin
 
     @mixin text($fontSize: 16px, $color: variables.$primary-color){
         font-size: $fontSize;
         color: $color;
+        @include breakpoint('sm'){
+            font-size: 12px
+        }
     };
 
     // Title mixin
@@ -39,6 +57,9 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    @include breakpoint('sm'){
+        padding: 12px 14px;
+    }
 };
 
 @mixin button-hover($bg-color: variables.$bg-gradient-light, $color: variables.$primary-color, $border: variables.$border-color-light){
@@ -58,19 +79,4 @@
         background: transparent;
         border: 1px solid $border;
     }
-};
-
-// Breakpoint mixin
-
-@mixin breakpoint($user-value){
-    $map: map-get(variables.$breakpoints, $user-value);
-
-    @if $map{
-        @media (#{$map}) {
-            @content;
-        }
-    }@else{
-        @error "Breakpoint '#{$user-value}' not found in $breakpoints map.";
-    }
-
 };

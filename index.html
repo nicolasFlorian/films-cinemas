@@ -10,7 +10,7 @@
     </head>
     
     <body>
-        <header class="header section">
+        <header class="header section" data-active="true">
             <div class="header-logo" aria-hidden="true">
                 <a href="#">
                     <img src="dist/images/logo.svg" alt="Films Logo">
@@ -67,7 +67,7 @@
                     <img src="dist/images/logo.svg" alt="Films Logo">
                 </h1>
                 <div class="hero__text__container">
-                    <h2 class="title-lg sm-title-3">
+                    <h2 class="title-lg sm-title-2">
                         Seu novo cinema favorito
                     </h2>
                     <ul class="text-lg hero__list">
@@ -86,13 +86,13 @@
 
         <section class="theaters section">
             <div class="theaters__container">
-
+                <h2 class="title-lg sm-title-2">Em cartaz</h2>
                 <div class="theaters__container__buttons">
                     <button class="theaters__button btn-primary" aria-selected="true" data-day-btn="12/04">
                         <span class="button__day-text">Sex</span>
                         <h5 class="button__day-number">12/04</h5>
                     </button>
-                    <button class="theaters__button btn-primary" aria-selected="false" data-day-btn="13/04>
+                    <button class="theaters__button btn-primary" aria-selected="false" data-day-btn="12/04">
                         <span class="button__day-text">Sab</span>
                         <h5 class="button__day-number">13/04</h5>
                     </button>
@@ -131,17 +131,22 @@
 
                 <div class="theaters__container__movies">
                     <div class="movies__controls">
-                        <h3>Sala - 3</h3>
+                        <h3 class="title-md sm-title-1">Sala - 3</h3>
                         <div class="controls__buttons">
-                            <svg aria-disabled="true">
-                                <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
-                            </svg>
-                            <svg aria-disabled="false">
-                                <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
-                            </svg>
+                            <button aria-disabled="" data-to="prev">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                            <button aria-disabled="" data-to="next">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
                         </div>
                     </div>
-                    <div class="movies__container__cards">
+                    <div class="movies__slide__container">
+                        <div class="movies__container__cards">
                         <div class="card">
                             <div class="card__image">
                                 <picture>
@@ -157,7 +162,186 @@
                                 </svg>
                                 <span>54/90</span>
                             </div>
-                        </div>                        
+                        </div>
+                        <div class="card">
+                            <div class="card__image">
+                                <picture>
+                                    <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                    <img src="dist/images/capas/dune.jpg" alt="Anatomia de uma queda poster">
+                                </picture>
+                            </div>
+                            <h6 class="card__title">Dune - Parte 2</h6>
+                            <p class="card__time">167 mins</p>
+                            <div class="card__seats__container" data-number-seat="danger">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                </svg>
+                                <span>54/90</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__image">
+                                <picture>
+                                    <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                    <img src="dist/images/capas/dune.jpg" alt="Anatomia de uma queda poster">
+                                </picture>
+                            </div>
+                            <h6 class="card__title">Dune - Parte 2</h6>
+                            <p class="card__time">167 mins</p>
+                            <div class="card__seats__container" data-number-seat="danger">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                </svg>
+                                <span>54/90</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__image">
+                                <picture>
+                                    <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                    <img src="dist/images/capas/dune.jpg" alt="Anatomia de uma queda poster">
+                                </picture>
+                            </div>
+                            <h6 class="card__title">Dune - Parte 2</h6>
+                            <p class="card__time">167 mins</p>
+                            <div class="card__seats__container" data-number-seat="danger">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                </svg>
+                                <span>54/90</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__image">
+                                <picture>
+                                    <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                    <img src="dist/images/capas/dune.jpg" alt="Anatomia de uma queda poster">
+                                </picture>
+                            </div>
+                            <h6 class="card__title">Dune - Parte 2</h6>
+                            <p class="card__time">167 mins</p>
+                            <div class="card__seats__container" data-number-seat="danger">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                </svg>
+                                <span>54/90</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__image">
+                                <picture>
+                                    <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                    <img src="dist/images/capas/dune.jpg" alt="Anatomia de uma queda poster">
+                                </picture>
+                            </div>
+                            <h6 class="card__title">Dune - Parte 2</h6>
+                            <p class="card__time">167 mins</p>
+                            <div class="card__seats__container" data-number-seat="danger">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                </svg>
+                                <span>54/90</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__image">
+                                <picture>
+                                    <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                    <img src="dist/images/capas/dune.jpg" alt="Anatomia de uma queda poster">
+                                </picture>
+                            </div>
+                            <h6 class="card__title">Dune - Parte 2</h6>
+                            <p class="card__time">167 mins</p>
+                            <div class="card__seats__container" data-number-seat="danger">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                </svg>
+                                <span>54/90</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__image">
+                                <picture>
+                                    <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                    <img src="dist/images/capas/dune.jpg" alt="Anatomia de uma queda poster">
+                                </picture>
+                            </div>
+                            <h6 class="card__title">Dune - Parte 2</h6>
+                            <p class="card__time">167 mins</p>
+                            <div class="card__seats__container" data-number-seat="danger">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                </svg>
+                                <span>54/90</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__image">
+                                <picture>
+                                    <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                    <img src="dist/images/capas/dune.jpg" alt="Anatomia de uma queda poster">
+                                </picture>
+                            </div>
+                            <h6 class="card__title">Dune - Parte 2</h6>
+                            <p class="card__time">167 mins</p>
+                            <div class="card__seats__container" data-number-seat="danger">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                </svg>
+                                <span>54/90</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__image">
+                                <picture>
+                                    <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                    <img src="dist/images/capas/dune.jpg" alt="Anatomia de uma queda poster">
+                                </picture>
+                            </div>
+                            <h6 class="card__title">Dune - Parte 2</h6>
+                            <p class="card__time">167 mins</p>
+                            <div class="card__seats__container" data-number-seat="danger">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                </svg>
+                                <span>54/90</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__image">
+                                <picture>
+                                    <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                    <img src="dist/images/capas/dune.jpg" alt="Anatomia de uma queda poster">
+                                </picture>
+                            </div>
+                            <h6 class="card__title">Dune - Parte 2</h6>
+                            <p class="card__time">167 mins</p>
+                            <div class="card__seats__container" data-number-seat="danger">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                </svg>
+                                <span>54/90</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__image">
+                                <picture>
+                                    <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                    <img src="dist/images/capas/dune.jpg" alt="Anatomia de uma queda poster">
+                                </picture>
+                            </div>
+                            <h6 class="card__title">Dune - Parte 2</h6>
+                            <p class="card__time">167 mins</p>
+                            <div class="card__seats__container" data-number-seat="danger">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                </svg>
+                                <span>54/90</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="mask" data-mask="left" aria-hidden="true"></div>
+                        <div class="mask" data-mask="right" aria-hidden="false"></div>
                     </div>
                 </div>
             </div>
