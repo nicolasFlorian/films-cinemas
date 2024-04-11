@@ -1,111 +1,120 @@
 // CONTAINER MOVIES
 
 const cm_movies = document.querySelector('.theaters__container');
-const cm_moviesList = cm_movies.querySelector('.movies__container__cards');
-const cm_moviesItems = cm_moviesList.querySelectorAll('.card');
-const cm_mask = document.querySelectorAll('.movies__slide__container .mask');
-
-// CONTROL BUTTONS CARROUSEL
-
-const cm_controlButtons = document.querySelector('.controls__buttons');
-const allBtn = cm_controlButtons.querySelectorAll('button')
-const btnPrev = cm_controlButtons.querySelector('[data-to="prev"]');
-const btnNext = cm_controlButtons.querySelector('[data-to="next"]');
-
-// OPTIONS
-
-const cardSize = {
-    width: cm_moviesItems[0].offsetWidth,
-    gapSize: parseInt(getComputedStyle(cm_moviesList).getPropertyValue('gap'))
-};
+const cm_moviesList = Array.from(cm_movies.querySelectorAll('.theaters__container__movies'));
 
 
+cm_moviesList.forEach(listContainer => {
+    const list = listContainer.querySelector('.movies__container__cards');
+    const Items = listContainer.querySelectorAll('.card');
+    const mask = listContainer.querySelectorAll('.movies__slide__container .mask');
 
-function lookAreaHidden() {
-    const totalListWidth = cm_moviesList.scrollWidth;
-    const areaHiddenExist = totalListWidth > cm_moviesList.offsetWidth ? true : false;
+    const cardSize = {
+        width: Items[0].offsetWidth,
+        gapSize: parseInt(getComputedStyle(list).getPropertyValue('gap'))
+    };
+
+    if (lookAreaHidden(list)) {
+        ableButtons(listContainer, list);
+        moveSlide(listContainer, list, cardSize);
+        ableMask(list, mask);
+        enableTouchScroll(list);
+    }
+});
+
+function lookAreaHidden(list) {
+
+    const totalListWidth = list.scrollWidth;
+    const areaHiddenExist = totalListWidth > list.offsetWidth ? true : false;
 
     return areaHiddenExist;
 }
 
+function ableButtons(listContainer, list){
+    const btnPrev = listContainer.querySelector('[data-to="prev"]');
+    const btnNext = listContainer.querySelector('[data-to="next"]');
 
-
-if(lookAreaHidden()){
-    ableButtons();
-    moveSlide();
-    ableMask();
-}
-
-function ableButtons(){
     btnPrev.setAttribute("aria-disabled", true);
     btnNext.setAttribute("aria-disabled", false);
 
-    cm_moviesList.addEventListener('scroll', () => {
+    list.addEventListener('scroll', () => {
         // CONTROL THE BUTTONS
-        let areaHiddenLeft = cm_moviesList.scrollWidth - cm_moviesList.scrollLeft - cm_moviesList.clientWidth;
+        let areaHiddenLeft = list.scrollWidth - list.scrollLeft - list.clientWidth;
 
         if(areaHiddenLeft === 0){
             btnNext.setAttribute("aria-disabled", true);
-        }else if(cm_moviesList.scrollLeft === 0){
+        }else if(list.scrollLeft === 0){
             btnPrev.setAttribute("aria-disabled", true);
         }else{
             btnPrev.setAttribute("aria-disabled", false);
             btnNext.setAttribute("aria-disabled", false);
         }
     })
-
-
 }
 
-
-function moveSlide(){
-    let totalAreaHidden = cm_moviesList.scrollWidth - cm_moviesList.clientWidth;
+function moveSlide(listContainer, list, cardSize){
+    const btnPrev = listContainer.querySelector('[data-to="prev"]');
+    const btnNext = listContainer.querySelector('[data-to="next"]');
+    let totalAreaHidden = list.scrollWidth - list.clientWidth;
 
     btnNext.addEventListener('click', () => {
-
         if(btnNext.getAttribute("aria-disabled") !== "true" && totalAreaHidden > cardSize.width){
-            cm_moviesList.scrollBy({left: cardSize.width + cardSize.gapSize, behavior: 'smooth'});
+            list.scrollBy({left: cardSize.width + cardSize.gapSize, behavior: 'smooth'});
             totalAreaHidden -= (cardSize.width + cardSize.gapSize)
         }else{
-            cm_moviesList.scrollBy({left: totalAreaHidden, behavior: 'smooth'});
+            list.scrollBy({left: totalAreaHidden, behavior: 'smooth'});
             totalAreaHidden = 0;
         }
     });
 
     btnPrev.addEventListener('click', () => {
         if(btnPrev.getAttribute("aria-disabled") !== "true"){
-            cm_moviesList.scrollBy({left: -cardSize.width - cardSize.gapSize, behavior: 'smooth'});
+            list.scrollBy({left: -cardSize.width - cardSize.gapSize, behavior: 'smooth'});
             totalAreaHidden += (cardSize.width + cardSize.gapSize)
-            console.log("From Prev" + totalAreaHidden)
         }
     });
 }
 
+function ableMask(list, mask){
+    let hasReachedRight = false;
+    let hasReturnedLeft = false;
 
-let hasReachedRight = false;
-let hasReturnedLeft = false;
-
-function ableMask(){
-    cm_moviesList.addEventListener('scroll', () => {
-        let areaHiddenLeft = cm_moviesList.scrollWidth - cm_moviesList.scrollLeft - cm_moviesList.clientWidth;
+    list.addEventListener('scroll', () => {
+        let areaHiddenLeft = list.scrollWidth - list.scrollLeft - list.clientWidth;
         
         if(areaHiddenLeft === 0){
             hasReachedRight = true;
             hasReturnedLeft = false;
         }
 
-        if(cm_moviesList.scrollLeft === 0){
+        if(list.scrollLeft === 0){
             hasReturnedLeft = true;
             hasReachedRight = false;
         }
 
         if(hasReachedRight && hasReturnedLeft == false){
-            cm_mask[1].setAttribute("aria-hidden", true);
-            cm_mask[0].setAttribute("aria-hidden", false);
+            mask[1].setAttribute("aria-hidden", true);
+            mask[0].setAttribute("aria-hidden", false);
         }else if(hasReturnedLeft && hasReachedRight == false){
-            cm_mask[0].setAttribute("aria-hidden", true);
-            cm_mask[1].setAttribute("aria-hidden", false);
+            mask[0].setAttribute("aria-hidden", true);
+            mask[1].setAttribute("aria-hidden", false);
         }
     })
 }
 
+function enableTouchScroll(list) {
+    let startX = 0;
+    let scrollLeft = 0;
+
+    list.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX - list.offsetLeft;
+        scrollLeft = list.scrollLeft;
+    });
+
+    list.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+        const x = e.touches[0].pageX - list.offsetLeft;
+        const walk = (x - startX);
+        list.scrollLeft = scrollLeft - walk;
+    });
+}

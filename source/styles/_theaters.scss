@@ -29,7 +29,8 @@
         h2{
             text-align: center;
         }
-        min-width: calc(100%);
+        min-width: 100%;
+        width: 1vw;
     }
 
     &__buttons{
@@ -38,21 +39,19 @@
         grid-auto-columns: 1fr;
         gap: 1rem;
         @include m.breakpoint('sm'){
-            width: 100%;
             gap: f.rem(8);
         }
 
         .theaters__button{
             flex-direction: column;
             padding-inline: f.rem(24);
-            @include m.button-hover;
             border-radius: f.rem(6);
             &::before{
                 border-radius: f.rem(6);
             }
 
             @include m.breakpoint('sm'){
-                padding: f.rem(10) f.rem(14);
+                padding: f.rem(8) f.rem(0);
                 border-radius: f.rem(4);
                 &::before{
                     border-radius: f.rem(4);
@@ -123,27 +122,6 @@
                 }
             }
 
-            .info__item:first-child{
-                .icon-r__container{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 25px;
-                    height: 25px;
-                    font-size: f.rem(16);
-                    color: v.$warning-color;
-                    font-weight: 500;
-                    background: v.$bg-gradient-dark;
-                    border: 1px solid v.$border-color-dark;
-                    border-radius: 4px;
-                    @include m.breakpoint('sm'){
-                        width: 20px;
-                        height: 20px;
-                        font-size: f.rem(12);
-                    }
-                }
-            }
-
             .info__item:last-child{
                 svg{
                     height: 20px;
@@ -160,7 +138,7 @@
 
     &__movies{
         @include m.breakpoint('sm'){
-            max-width: calc(100vw - 40px);
+            max-width: 100%;
             width: fit-content;
         }
         display: flex;
@@ -209,13 +187,13 @@
 
         .movies__slide__container{
             position: relative;
+            border: 1px solid transparent;
         }
 
         .mask{
             position: absolute;
             height: 100%;
-            width: 100%;
-            right: 0;
+            width: 5%;
             bottom: 0;
             opacity: 0;
             z-index: 1;
@@ -225,6 +203,7 @@
             display: grid;
             grid-template-rows: 1fr;
             grid-auto-flow: column;
+            grid-auto-columns:min-content;
             overflow-x: hidden;
             transition: all 0.3s ease;
             position: relative;
@@ -264,13 +243,18 @@
                         }
                     }
                 }
+                &__title__container{
+                    display: flex;
+                    justify-content: space-between;
 
-                &__title{
-                    font-size: f.rem(18);
-                    font-weight: 500;
-                    color: v.$primary-color;
-                    @include m.breakpoint('sm'){
-                        font-size: f.rem(14);
+                    .card__title{
+                        max-width: 80%;
+                        font-size: f.rem(18);
+                        font-weight: 500;
+                        color: v.$primary-color;
+                        @include m.breakpoint('sm'){
+                            font-size: f.rem(14);
+                        }
                     }
                 }
 
@@ -309,7 +293,7 @@
                     }
                 }
 
-                &__seats__container[data-number-seat="waning"]{
+                &__seats__container[data-number-seat="warning"]{
                     svg{
                         fill: v.$warning-color;
                     }
@@ -335,11 +319,13 @@
         }
 
         .mask[data-mask="right"]{
-            background: linear-gradient(to right, transparent 95%, v.$bg-color-light);
+            background: linear-gradient(to right, transparent, v.$bg-color-light);
+            right: 0;
         }
 
         .mask[data-mask="left"]{
-            background: linear-gradient(to left, transparent 95%, v.$bg-color-light);
+            background: linear-gradient(to left, transparent, v.$bg-color-light);
+            left: 0;
         }
 
         .mask[aria-hidden="true"]{
@@ -352,4 +338,31 @@
             opacity: 1;
         }
     }
+}
+
+.icon-r__container[data-active="true"]{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    font-size: f.rem(16);
+    color: v.$warning-color;
+    font-weight: 500;
+    background: v.$bg-gradient-dark;
+    border: 1px solid v.$border-color-dark;
+    border-radius: 4px;
+    @include m.breakpoint('sm'){
+        width: 20px;
+        height: 20px;
+        font-size: f.rem(12);
+    }
+}
+
+.icon-r__container[data-active="false"]{
+    display: none;
+}
+
+.dnone{
+    display: none;
 }

@@ -11,11 +11,16 @@ $bg-color-light: #14181c;
 $bg-color-dark: #0d0f12;
 $bg-gradient-light: linear-gradient(120deg, #69778B 0%, #5F6C7E 100%);
 $bg-gradient-dark: linear-gradient(120deg, #373E49 0%, #2B3442 100%);
-$bg-gradient-rainbow:   radial-gradient(190% 105% at 90% 55%, rgba(0, 45, 255, 0.10) 0%, rgba(0, 45, 255, 0.00) 100%), 
-                        radial-gradient(290% 105% at 70% 50%, rgba(125, 205, 229, 0.10) 0%, rgba(125, 205, 229, 0.00) 100%), 
-                        radial-gradient(70% 135% at 35% 40%, rgba(255, 215, 21, 0.05) 0%, rgba(255, 215, 21, 0.00) 100%), 
-                        radial-gradient(150% 85% at 15% 50%, rgba(255, 0, 0, 0.10) 0%, rgba(255, 0, 0, 0.00) 100%);
 $bg-gradient-success: linear-gradient(120deg, #2AD755 0%, #00C030 100%);
+
+$bg-gradient-rainbow-linear-b: linear-gradient(to bottom, #121A33, #1F2A30, #20221C, #2C1619);
+$bg-gradient-rainbow-linear-light-b: linear-gradient(to bottom, rgb(14, 21, 53), rgb(13, 28, 33), rgb(47, 47, 47), rgb(69, 62, 17), rgb(64, 15, 15));
+
+
+$bg-gradient-rainbow-linear-hover-b: linear-gradient(to bottom, lighten($color:#121A33, $amount: 5%), lighten($color:#1F2A30, $amount: 5%), lighten($color:#20221C, $amount: 5%), lighten($color:#2C1619, $amount: 5%));
+$bg-gradient-rainbow-linear-light-hover-b: linear-gradient(to bottom, rgb(2, 33, 172), rgb(84, 147, 167), rgb(172, 172, 172), rgb(190, 161, 18), rgb(158, 1, 1));
+
+
 
 $border-color-light: #B0B6BF;
 $border-color-dark: #556576;

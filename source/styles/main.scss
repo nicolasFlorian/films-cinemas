@@ -6,6 +6,11 @@
 @use 'header';
 @use 'hero';
 @use 'theaters';
+@use 'watch-anywhere';
+
+html{
+    scroll-behavior: smooth;
+}
 
 body{
     background-color: variables.$bg-color-light;

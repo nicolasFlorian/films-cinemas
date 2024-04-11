@@ -53,8 +53,6 @@ header{
 
     .btn-dropdown{
         &__select{
-            @include mixins.button-hover;
-
             svg:last-child{
                 height: 8px;
                 width: 8px;
@@ -62,27 +60,20 @@ header{
         }
     }
 
-    button.btn-success:last-child{
-        @include mixins.button-hover;
+    a.btn-success:last-child{
         width: max-content;
         height: min-content;
+        text-decoration: none;
 
-        &::before{
-            background: linear-gradient(120deg, #2AD755, #00C030, #2AD755,
-            #00C030, #2AD755, #00C030, #2AD755);
-            background-size: 500% 500%;
-            transition: opacity 0.3s ease;
-            border-radius: 4px;
-        }
+        background: linear-gradient(120deg, #2AD755, #00C030, #2AD755,
+        #00C030, #2AD755, #00C030, #2AD755);
+        background-size: 500% 500%;
+        transition: opacity 0.3s ease;
+        border-radius: 4px;
 
-        &:hover::before {
+        &:hover {
             animation: gradient 4s ease infinite;
             opacity: 1;
-        }
-
-        &:hover{
-            background: transparent;
-            border: none;
         }
     }
 }
@@ -145,7 +136,6 @@ header{
         &__option button{
             width: 100%;
             padding-inline: 14px;
-            @include mixins.button-hover;
         }
     }
 }
