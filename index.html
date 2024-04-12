@@ -12,54 +12,56 @@
     
     <body>
         <header class="header section" data-active="true">
-            <div class="header-logo" aria-hidden="true">
-                <a href="#">
-                    <img src="dist/images/logo.svg" alt="Films Logo">
-                </a>
-            </div>
-            <nav class="menu">
+            <div>
+                <div class="header-logo" aria-hidden="true">
+                    <a href="#">
+                        <img src="dist/images/logo.svg" alt="Films Logo">
+                    </a>
+                </div>
+                <nav class="menu">
 
-                <div class="btn-dropdown">
+                    <div class="btn-dropdown">
 
-                    <div class="btn-dropdown__select btn-primary" aria-expanded="false">
-                        <svg>
-                            <use xlink:href="dist/icons/symbol/sprite.svg#profile"></use>
-                        </svg>
-                        <span>ACESSAR</span>
-                        <svg>
-                            <use xlink:href="dist/icons/symbol/sprite.svg#arrow-full"></use>
-                        </svg>
+                        <div class="btn-dropdown__select btn-primary" aria-expanded="false">
+                            <svg>
+                                <use xlink:href="dist/icons/symbol/sprite.svg#profile"></use>
+                            </svg>
+                            <span>ACESSAR</span>
+                            <svg>
+                                <use xlink:href="dist/icons/symbol/sprite.svg#arrow-full"></use>
+                            </svg>
+                        </div>
+
+                        <ul class="btn-dropdown__options" aria-hidden="true">
+                            <li class="btn-dropdown__options__option option-1">
+                                <button class="btn-primary">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#login"></use>
+                                    </svg>
+                                    <span>LOGIN</span>
+                                </button>
+                            </li>
+                            <li class="btn-dropdown__options__option option-2">
+                                <button class="btn-primary">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#ticket"></use>
+                                    </svg>
+                                    <span>INGRESSOS</span>
+                                </button>
+                            </li>
+                        </ul>
+
                     </div>
 
-                    <ul class="btn-dropdown__options" aria-hidden="true">
-                        <li class="btn-dropdown__options__option option-1">
-                            <button class="btn-primary">
-                                <svg>
-                                    <use xlink:href="dist/icons/symbol/sprite.svg#login"></use>
-                                </svg>
-                                <span>LOGIN</span>
-                            </button>
-                        </li>
-                        <li class="btn-dropdown__options__option option-2">
-                            <button class="btn-primary">
-                                <svg>
-                                    <use xlink:href="dist/icons/symbol/sprite.svg#ticket"></use>
-                                </svg>
-                                <span>INGRESSOS</span>
-                            </button>
-                        </li>
-                    </ul>
+                    <a class="btn-success" href="#in-theaters">
+                        <svg>
+                            <use xlink:href="dist/icons/symbol/sprite.svg#film"></use>
+                        </svg>
+                        <span>EM CARTAZ</span>
+                    </a>
 
-                </div>
-
-                <a class="btn-success" href="#in-theaters">
-                    <svg>
-                        <use xlink:href="dist/icons/symbol/sprite.svg#film"></use>
-                    </svg>
-                    <span>EM CARTAZ</span>
-                </a>
-
-            </nav>
+                </nav>
+            </div>
         </header>
 
         <section class="hero section">
@@ -383,9 +385,147 @@
         </section>
 
         <section class="faq section">
-            
+            <h2 class="title-lg sm-title-2">Perguntas Frequentes</h2>
+
+            <div class="faq__container">
+                <div class="faq__container__item">
+                    <button class="faq__title btn-primary" aria-expanded="false" data-faq-question>
+                        <h4 class="title-sm">Como eu faço para assinar?</h4>
+                        <svg>
+                            <use xlink:href="dist/icons/symbol/sprite.svg#plus"></use>
+                        </svg>
+                    </button>
+                    <div class="faq__content" aria-hidden="true" data-faq-answer>
+                        <div>
+                            <p class="text-md">Para assinar é muito simples, basta clicar no botão ASSINAR do plano desejado e preencher os dados solicitados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__container__item">
+                    <button class="faq__title btn-primary" aria-expanded="false" data-faq-question>
+                        <h4 class="title-sm">Qual a localização do cinema?</h4>
+                        <svg>
+                            <use xlink:href="dist/icons/symbol/sprite.svg#plus"></use>
+                        </svg>
+                    </button>
+                    <div class="faq__content" aria-hidden="true" data-faq-answer>
+                        <div>
+                            <p class="text-md">Para assinar é muito simples, basta clicar no botão ASSINAR do plano desejado e preencher os dados solicitados.</p>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40106.142890717216!2d-46.734222829555854!3d-23.544752913553136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57096c930267%3A0x93a1219293a014f6!2sCinemark%20-%20Shopping%20Eldorado!5e0!3m2!1spt-BR!2sbr!4v1712844772626!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:1px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__container__item">
+                    <button class="faq__title btn-primary" aria-expanded="false" data-faq-question>
+                        <h4 class="title-sm">Posso fazer requisições sem assinar?</h4>
+                        <svg>
+                            <use xlink:href="dist/icons/symbol/sprite.svg#plus"></use>
+                        </svg>
+                    </button>
+                    <div class="faq__content" aria-hidden="true" data-faq-answer>
+                        <div>
+                            <p class="text-md">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim itaque doloremque est, ullam fuga illum consequatur repellendus assumenda soluta optio quidem. A nemo doloremque animi, ducimus quidem commodi recusandae ex.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__container__item">
+                    <button class="faq__title btn-primary" aria-expanded="false" data-faq-question>
+                        <h4 class="title-sm">Como faço para cancelar?</h4>
+                        <svg>
+                            <use xlink:href="dist/icons/symbol/sprite.svg#plus"></use>
+                        </svg>
+                    </button>
+                    <div class="faq__content" aria-hidden="true" data-faq-answer>
+                        <div>
+                            <p class="text-md">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta enim cum quae fuga, tempore ex, aut voluptate possimus reiciendis vel voluptatibus laudantium ad ipsam expedita, temporibus consequuntur! Nam, unde cum?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__container__item">
+                    <button class="faq__title btn-primary" aria-expanded="false" data-faq-question>
+                        <h4 class="title-sm">Como posso acessar o streaming?</h4>
+                        <svg>
+                            <use xlink:href="dist/icons/symbol/sprite.svg#plus"></use>
+                        </svg>
+                    </button>
+                    <div class="faq__content" aria-hidden="true" data-faq-answer>
+                        <div>
+                            <p class="text-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt harum officiis ab fugiat unde odit iure, accusamus eaque nesciunt quia quisquam, veniam, voluptatibus iusto a aperiam animi deserunt provident natus? Dolorem sequi voluptatem distinctio delectus cumque ut corporis error cum porro, eum dignissimos, facere quidem amet at vel libero? Minus?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <section class="newsletter section">
+            <h2 class="title-lg sm-title-2">Não perca nada!</h2>
+            <div class="newsletter__container">
+                <p class="text-lg ">
+                    Quer receber ofertas, novidades, filmes em cartaz e em requisições? Inscreva-se em nossa newsletter e fique por dentro de tudo.
+                </p>
+                <form class="newsletter__container__form">
+                    <div class="input__container">
+                        <input type="email" id="email" placeholder=" ">
+                        <label for="email">Digite seu email</label>
+                        <p class="error__text">Insira um email válido</p>
+                    </div>
+                    <button class="btn-primary btn-success btn__newsletter" disabled>INSCREVER-SE</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer section">
+            <div class="footer__container__logo">
+                <img src="dist/images/logo.svg" alt="Logo films">
+            </div>
+            <div class="footer__container__content">
+                <ul class="list__links__container">
+                    <li><a href="">Política de Privacidade</a></li>
+                    <li><a href="">films.</a></li>
+                    <li><a href="">Proteção de dados no Brasil</a></li>
+                    <li><a href="">Planos e inscrições</a></li>
+                    <li><a href="">Anúncios Personalizados</a></li>
+                    <li><a href="">Em cartaz</a></li>
+                    <li><a href="">Dispositivos compatíveis</a></li>
+                    <li><a href="">Assista onde quiser</a></li>
+                    <li><a href="">Ajuda</a></li>
+                    <li><a href="">Perguntas frequentes</a></li>
+                    <li><a href="">Sobre a films.</a></li>
+                    <li><a href="">Newsletter</a></li>
+                    <li class="footer__languages__container">
+                        <svg class="globe__select">
+                            <use xlink:href="dist/icons/symbol/sprite.svg#globe"></use>
+                        </svg>
+                        <select>
+                            <option value="Português">Português</option>
+                            <option value="Inglês">Inglês</option>
+                            <option value="Espanhol">Espanhol</option>
+                        </select>
+                        <svg class="arrow__select">
+                            <use xlink:href="dist/icons/symbol/sprite.svg#arrow-full"></use>
+                        </svg>
+                    </li>
+                    <li class="footer__social-medias__container">
+                        <a href="">
+                            <svg>
+                                <use xlink:href="dist/icons/symbol/sprite.svg#instagram"></use>
+                            </svg>
+                        </a>
+                        <a href="">
+                            <svg>
+                                <use xlink:href="dist/icons/symbol/sprite.svg#tiktok"></use>
+                            </svg>
+                        </a>
+                        <a href="">
+                            <svg>
+                                <use xlink:href="dist/icons/symbol/sprite.svg#x"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyrights">©2024 Films Cinemas. Feito por Nicolas Floriano.</p>
+            </div>
+        </footer>
     </body>
 
 </html>

@@ -7,6 +7,9 @@
 @use 'hero';
 @use 'theaters';
 @use 'watch-anywhere';
+@use 'faq';
+@use 'newsletter';
+@use 'footer';
 
 html{
     scroll-behavior: smooth;
