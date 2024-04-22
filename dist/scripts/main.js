@@ -106,7 +106,7 @@ const cm_movies=document.querySelector(".theaters__container"),cm_moviesList=Arr
         <div class="checkout__btn__container">
             <button class="btn-primary close__btn">
                 <svg>
-                    <use xlink:href="dist/icons/symbol/sprite.svg#cancel"></use>
+                    <use xlink:href="dist/icons/normal/symbol/sprite.svg#cancel"></use>
                 </svg>
             </button>
             <button class="btn-primary purchase__btn" disabled>COMPRAR</button>
