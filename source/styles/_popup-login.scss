@@ -1,0 +1,383 @@
+@use 'variables' as v;
+@use 'functions' as f;
+@use 'mixins' as m;
+@use 'animations';
+
+.popup-login{
+
+    .popup__container{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        max-width: fit-content;
+        gap: f.rem(32);
+        position: relative;
+        border-radius: 12px;
+        align-items: center;
+        @include m.breakpoint('sm'){
+            grid-template-columns: 1fr;
+            gap: f.rem(32);
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 70%;
+
+            .login__video__section{
+                order: 2;
+            }
+
+            .login__form__section{
+                order: 1;
+            }
+        }
+
+        .popup___close-btn{
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: 16px;
+            margin-top: 16px;
+            padding: 10px;
+            width: 36px;
+            height: 36px;
+            cursor: pointer; 
+
+            @include m.breakpoint('sm'){
+                margin-right: 12px;
+                margin-top: 22px;
+            }
+        }
+
+        .login__video__section{
+            position: relative;
+            height: 630px;
+            border-radius: 6px;
+            border: 1px solid v.$border-color-dark;
+            @include m.breakpoint('sm'){
+                height: 450px;
+            }
+
+            .video__bg__container {
+                height: 100%;
+                .login__video__trailer {
+                    height: 100%;
+                    transition: all 0.3s ease-in-out;
+                    opacity: 0.5;
+                    object-fit: cover;
+            
+                    &:hover {
+                        opacity: 0.9;
+                    }
+                }
+            }
+
+            .video__bg__container:hover ~ .video__content__container{
+                opacity: 0.5;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .login__video__trailer{
+                position: relative;
+                width: 350px;
+                height: 100%;
+                border-radius: 6px;
+            }
+
+            .video__content__container{
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                padding: 16px;
+                z-index: 2;
+                transition: all 0.5s ease-in-out;
+
+                .title__container{
+                    display: flex;
+                    flex-direction: column;
+                    gap: f.rem(12);
+
+                    h3{
+                        font-size: f.rem(24);
+                        font-weight: 500;
+                        max-width: 200px;
+                    }
+                }
+
+                .login__header__container{
+                    height: fit-content;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    order: 2;
+                    position: relative;
+                }
+
+                .stars__container{
+                    display: flex;
+                    gap: f.rem(2);
+
+                    .star{
+                        width: 20px;
+                        height: 20px;
+                        fill: v.$warning-color;
+                    }
+                }
+
+                .star__container[data-clip="false"]{
+                    .star:last-child{
+                        clip-path: none;
+                    }
+                }
+
+                .stars__container[data-clip="true"]{
+                    .star:last-child{
+                        clip-path: inset(0 50% 0 0);
+                    }
+                }
+
+                .logo__container{
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    align-self: end;
+
+
+                    a{
+                        
+                    }
+                    img{
+                        cursor: pointer;
+                        width: auto;
+                        height: 60%;
+                    }
+                }
+            }
+
+            .icons__video__container{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 40px;
+                height: 40px;
+
+                @include m.breakpoint('sm'){
+                    top: 40%;
+                }
+
+                svg{
+                    width: 100%;
+                    height: 100%;
+                    fill: rgb(255, 255, 255, 0.3);
+                }
+            }
+
+            .icons__video__container[data-behavior="played"]{
+                svg.pause{
+                    display: none;
+                }
+            }
+            .icons__video__container[data-behavior="paused"]{
+                svg.play{
+                    display: none;
+                }
+            }
+            .icons__video__container[data-behavior="none"]{
+                display: none;
+            }
+        }
+
+        .login__form__section{
+            display: flex;
+            flex-direction: column;
+            gap: f.rem(16);
+
+            h2{
+                font-size: 28px;
+                font-weight: 600;
+                margin-bottom: f.rem(16);
+                min-width: 300px;
+            }
+
+            .logo__container{
+                display: flex;
+
+                img{
+                    width: 100px;
+                    height: auto;
+                }
+            }
+
+            .form__container{
+                display: flex;
+                flex-direction: column;
+                gap: f.rem(16);
+
+                .input__container{
+                    position: relative;
+    
+                    input{
+                        background: transparent;
+                        border: 1px solid v.$border-color-dark;
+                        padding: 14px 16px;
+                        font-size: f.rem(16);
+                        border-radius: 4px;
+                        outline: none;
+                        width: 100%;
+                        color: v.$primary-color;
+                        outline: none;
+                        width: 100%;
+                        color: v.$primary-color;
+                        transition: all 0.2s ease;
+                    }
+    
+                    input ~ .error__text{
+                        display: none;
+                        color: v.$danger-color;
+                        text-align: start;
+                        margin-top: 8px;
+                        font-size: f.rem(12);
+                    }
+    
+                    input.error ~ .error__text{
+                        display: block;
+                    }
+    
+                    input.error{
+                        border-color: v.$danger-color;
+                    }
+    
+                    input:focus{
+                        border-color: v.$border-color-light;
+                    }
+    
+                    input.error:focus{
+                        border-color: v.$danger-color;
+                    }
+    
+                    label{
+                        position: absolute;
+                        left: 17px;
+                        top: 15px;
+                        color: v.$border-color-dark;
+                        z-index: 3;
+                        transition: all 0.1s ease;
+                        cursor:text;
+                    }
+    
+                    input.error + label{
+                        color: v.$danger-color;
+                    }
+    
+                    input:focus + label, input:not(:placeholder-shown) + label{
+                        top: -8px;
+                        font-size: f.rem(12);
+                        color: v.$border-color-light;
+                    }
+    
+                    input.error:focus + label, input.error:not(:placeholder-shown) + label{
+                        color: v.$danger-color;
+                    }
+    
+                    input:focus + label::after, input:not(:placeholder-shown) + label::after{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        padding-inline: 6px;
+                        height: 2px;
+                        background: #373E49;
+                        bottom: 5px;
+                        left: -6px;
+                        z-index: -1;
+                        transition: none;
+                    }
+    
+                    input:-webkit-autofill{
+                        -webkit-box-shadow: 0 0 0 30px v.$bg-color-light inset;
+                        -webkit-text-fill-color: v.$primary-color;
+                    }
+
+                    label{
+                        user-select: none;
+                    }
+                }
+
+                .form__forget__passwrod{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: f.rem(12);
+                    color: v.$border-color-dark;
+
+                    a:hover{
+                        color: v.$primary-color;
+                        transition: all 0.2s ease;
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+
+                    .remember__me{
+                        display: flex;
+                        align-items: center;
+                        gap: f.rem(8);
+                        color: v.$primary-color;
+                    }
+                }
+
+                button{
+                    @include m.button-success;
+                    font-weight: 600;
+                    justify-content: center;
+                }
+            }
+
+            .login__register{
+                display: flex;
+                align-self: center;
+                gap: f.rem(8);
+                font-size: f.rem(14);
+
+                a{
+                    color: v.$primary-color;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+
+                    &:hover{
+                        color: v.$success-color;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .login__social-medias{
+                display: flex;
+                flex-direction: column;
+                margin-top: f.rem(16);
+                gap: f.rem(16);
+
+                &>span{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: f.rem(8);
+
+                    &::before, &::after{
+                        content: '';
+                        display: block;
+                        width: 100%;
+                        height: 1px;
+                        background: v.$border-color-dark;
+                    }
+                }
+
+                button{
+                    justify-content: center;
+                }
+            }
+        }
+
+    }
+}

@@ -10,6 +10,9 @@
         height: auto;
         margin-bottom: 0;
     }
+    @include mixins.breakpoint('md'){
+        height: auto;
+    }
 
     .hero__content__container{
         display: flex;
@@ -22,6 +25,9 @@
         .hero__image__container{
             width: 100%;
             @include mixins.breakpoint('sm'){
+                width: 70%;
+            }
+            @include mixins.breakpoint('md'){
                 width: 70%;
             }
     
@@ -47,6 +53,11 @@
                     max-width: 250px;
                 }
 
+                .link__requisition{
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+
                 >li{
                     list-style: outside;
                 }
@@ -63,6 +74,9 @@
         left: 0;
         right: 0;
         @include mixins.breakpoint('sm'){
+            height: 70%;
+        }
+        @include mixins.breakpoint('md'){
             height: 70%;
         }
     }

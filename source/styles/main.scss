@@ -10,6 +10,10 @@
 @use 'faq';
 @use 'newsletter';
 @use 'footer';
+@use 'popup-requisition';
+@use 'notification';
+@use 'popup-movie';
+@use 'popup-login';
 
 html{
     scroll-behavior: smooth;

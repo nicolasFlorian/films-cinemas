@@ -74,7 +74,7 @@
                         Seu novo cinema favorito
                     </h2>
                     <ul class="text-lg hero__list">
-                        <li>Faça postagens de filmes e tenha a chance de exibi-los. <a href="#" class="text-lg">saiba mais</a></li>
+                        <li>Faça postagens de filmes e tenha a chance de exibi-los. <a class="text-lg link__requisition">saiba mais</a></li>
                         <li>Assista aos clássicos mais amados e redescubra a arte do cinema.</li>
                         <li>Assine um de nossos planos e tenha acesso ao nosso acervo.</li>
                     </ul>
@@ -82,7 +82,7 @@
             </div>
             <div class="hero__video__container">
                 <video autoplay loop playsinline preload="auto" class="hero__video__bg" muted>
-                    <source src="dist/videos/output.mp4" type="video/mp4" >
+                    <source src="dist/videos/hero/output.mp4" type="video/mp4" >
                 </video>
             </div>
         </section>
@@ -90,22 +90,27 @@
         <section class="theaters section">
             <div class="theaters__container">
                 <h2  id="in-theaters" class="title-lg sm-title-2">Em cartaz</h2>
+
                 <div class="theaters__container__buttons">
-                    <button class="theaters__button btn-primary" aria-selected="true" data-day-btn="12/04">
+                    <button class="theaters__button btn-primary" aria-selected="true" data-day="12/04">
                         <span class="button__day-text">Sex</span>
                         <h5 class="button__day-number">12/04</h5>
                     </button>
-                    <button class="theaters__button btn-primary" aria-selected="false" data-day-btn="12/04">
+                    <button class="theaters__button btn-primary" aria-selected="false" data-day="13/04">
                         <span class="button__day-text">Sab</span>
                         <h5 class="button__day-number">13/04</h5>
                     </button>
-                    <button class="theaters__button btn-primary" aria-selected="false" data-day-btn="14/04">
+                    <button class="theaters__button btn-primary" aria-selected="false" data-day="14/04">
                         <span class="button__day-text">Dom</span>
                         <h5 class="button__day-number">14/04</h5>
                     </button>
-                    <button class="theaters__button btn-primary" aria-selected="false" data-day-btn="15/04">
+                    <button class="theaters__button btn-primary" aria-selected="false" data-day="15/04">
                         <span class="button__day-text">Seg</span>
                         <h5 class="button__day-number">15/04</h5>
+                    </button>
+                    <button class="theaters__button btn-primary" aria-selected="false" data-day="16/04">
+                        <span class="button__day-text">Ter</span>
+                        <h5 class="button__day-number">16/04</h5>
                     </button>
                 </div>
 
@@ -132,7 +137,7 @@
                     </ul>
                 </div>
 
-                <div class="theaters__container__movies">
+                <div class="theaters__container__movies" data-day-id="12/04">
                     <div class="movies__controls">
                         <h3 class="title-md sm-title-1">Sala - 3</h3>
                         <div class="controls__buttons">
@@ -164,11 +169,11 @@
                                     </div>
                                 </div>
                                 <p class="card__time">152 mins</p>
-                                <div class="card__seats__container" data-number-seat="warning">
+                                <div class="card__seats__container" data-number-seat="success">
                                     <svg>
                                         <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
                                     </svg>
-                                    <span>32/90</span>
+                                    <span>32 / 96</span>
                                 </div>
                             </div>
                             <div class="card">
@@ -189,7 +194,7 @@
                                     <svg>
                                         <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
                                     </svg>
-                                    <span>22/90</span>
+                                    <span>22 / 96</span>
                                 </div>
                             </div>
                             <div class="card">
@@ -206,11 +211,11 @@
                                     </div>
                                 </div>
                                 <p class="card__time">167 mins</p>
-                                <div class="card__seats__container" data-number-seat="danger">
+                                <div class="card__seats__container" data-number-seat="success">
                                     <svg>
                                         <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
                                     </svg>
-                                    <span>65/90</span>
+                                    <span>88 / 96</span>
                                 </div>
                             </div>
                             <div class="card">
@@ -227,11 +232,11 @@
                                     </div>
                                 </div>
                                 <p class="card__time">114 mins</p>
-                                <div class="card__seats__container" data-number-seat="warning">
+                                <div class="card__seats__container" data-number-seat="success">
                                     <svg>
                                         <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
                                     </svg>
-                                    <span>34/90</span>
+                                    <span>34 / 96</span>
                                 </div>
                             </div>
                             <div class="card">
@@ -242,7 +247,7 @@
                                     </picture>
                                 </div>
                                 <div class="card__title__container">
-                                    <h6 class="card__title">immaculate</h6>
+                                    <h6 class="card__title">Immaculate</h6>
                                     <div class="icon-r__container" data-active="false">
                                         <span>R</span>
                                     </div>
@@ -252,7 +257,7 @@
                                     <svg>
                                         <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
                                     </svg>
-                                    <span>21/90</span>
+                                    <span>21 / 96</span>
                                 </div>
                             </div>
                             <div class="card">
@@ -273,51 +278,774 @@
                                     <svg>
                                         <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
                                     </svg>
-                                    <span>28/90</span>
+                                    <span>28 / 96</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mask" data-mask="left" aria-hidden="true"></div>
+                        <div class="mask" data-mask="right" aria-hidden="false"></div>
+                    </div>
+                </div>
+
+                <div class="theaters__container__movies" data-day-id="12/04">
+                    <div class="movies__controls">
+                        <h3 class="title-md sm-title-1">Sala - 4</h3>
+                        <div class="controls__buttons">
+                            <button aria-disabled="true" data-to="prev">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                            <button aria-disabled="true" data-to="next">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="movies__slide__container">
+                        <div class="movies__container__cards">
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/back-to-black.webp" type="image/webp">
+                                        <img src="dist/images/capas/back-to-black.jpg" alt="Back to Black poster">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Back to Black</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">122 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>22 / 76</span>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card__image">
                                     <picture>
-                                        <source srcset="dist/images/capas/poor-things.webp" type="image/webp">
-                                        <img src="dist/images/capas/poor-things.jpg" alt="Anatomia de uma queda poster">
+                                        <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                        <img src="dist/images/capas/dune.jpg" alt="Anatomia de uma queda poster">
                                     </picture>
                                 </div>
                                 <div class="card__title__container">
-                                    <h6 class="card__title">Pobres Criaturas</h6>
+                                    <h6 class="card__title">Duna - Parte 2</h6>
                                     <div class="icon-r__container" data-active="false">
                                         <span>R</span>
                                     </div>
                                 </div>
-                                <p class="card__time">142 mins</p>
+                                <p class="card__time">167 mins</p>
                                 <div class="card__seats__container" data-number-seat="success">
                                     <svg>
                                         <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
                                     </svg>
-                                    <span>28/90</span>
+                                    <span>27 / 76</span>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card__image">
                                     <picture>
-                                        <source srcset="dist/images/capas/poor-things.webp" type="image/webp">
-                                        <img src="dist/images/capas/poor-things.jpg" alt="Anatomia de uma queda poster">
+                                        <source srcset="dist/images/capas/dona-lurdes.webp" type="image/webp">
+                                        <img src="dist/images/capas/dona-lurdes.jpg" alt="Dona Lurdes o Filme poster">
                                     </picture>
                                 </div>
                                 <div class="card__title__container">
-                                    <h6 class="card__title">Pobres Criaturas</h6>
+                                    <h6 class="card__title">Dona Lurdes</h6>
                                     <div class="icon-r__container" data-active="false">
                                         <span>R</span>
                                     </div>
                                 </div>
-                                <p class="card__time">142 mins</p>
+                                <p class="card__time">90 mins</p>
                                 <div class="card__seats__container" data-number-seat="success">
                                     <svg>
                                         <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
                                     </svg>
-                                    <span>28/90</span>
+                                    <span>14 / 76</span>
                                 </div>
                             </div>
+                        </div>
+                        <div class="mask" data-mask="left" aria-hidden="true"></div>
+                        <div class="mask" data-mask="right" aria-hidden="false"></div>
+                    </div>
+                </div>
+
+                <div class="theaters__container__movies" data-day-id="13/04">
+                    <div class="movies__controls">
+                        <h3 class="title-md sm-title-1">Sala - 4</h3>
+                        <div class="controls__buttons">
+                            <button aria-disabled="true" data-to="prev">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                            <button aria-disabled="true" data-to="next">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="movies__slide__container">
+                        <div class="movies__container__cards">
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/ghostbusters.webp" type="image/webp">
+                                        <img src="dist/images/capas/ghostbusters.jpg" alt="Ghostbusters poster">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Ghostbusters Apocalipse de Gelo</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">115 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>32 / 76</span>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                        <img src="dist/images/capas/dune.jpg" alt="Duna - Parte 2">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Duna - Parte 2</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">167 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>46 / 76</span>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/challengers.webp" type="image/webp">
+                                        <img src="dist/images/capas/challengers.jpg" alt="Challengers">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Challengers</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">131 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>23 / 76</span>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/maxxxine.webp" type="image/webp">
+                                        <img src="dist/images/capas/maxxxine.jpg" alt="Maxxxine">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Maxxxine</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">109 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>29 / 76</span>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/dona-lurdes.webp" type="image/webp">
+                                        <img src="dist/images/capas/dona-lurdes.jpg" alt="Dona Lurdes">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Dona Lurdes</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">90 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>12 / 76</span>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/godzilla-x-kong.webp" type="image/webp">
+                                        <img src="dist/images/capas/godzilla-x-kong.jpg" alt="Godzilla vs. Kong">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Godzilla vs. Kong</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">114 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>15 / 76</span>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/immaculate.webp" type="image/webp">
+                                        <img src="dist/images/capas/immaculate.jpg" alt="Immaculate">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Immaculate</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">89 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>26 / 76</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="mask" data-mask="left" aria-hidden="true"></div>
+                        <div class="mask" data-mask="right" aria-hidden="false"></div>
+                    </div>
+                </div>
+                
+                <div class="theaters__container__movies" data-day-id="13/04">
+                    <div class="movies__controls">
+                        <h3 class="title-md sm-title-1">Sala - 2</h3>
+                        <div class="controls__buttons">
+                            <button aria-disabled="true" data-to="prev">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                            <button aria-disabled="true" data-to="next">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="movies__slide__container">
+                        <div class="movies__container__cards">
+
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/challengers.webp" type="image/webp">
+                                        <img src="dist/images/capas/challengers.jpg" alt="Challengers">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Challengers</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">131 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>22 / 66</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/kung-fu-panda-4.webp" type="image/webp">
+                                        <img src="dist/images/capas/kung-fu-panda-4.jpg" alt="Kung-Fu Panda 4">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Kung Fu Panda 4</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">94 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>20 / 66</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/the-boy-and-the-heron.webp" type="image/webp">
+                                        <img src="dist/images/capas/the-boy-and-the-heron.jpg" alt="O Menino e a Garça">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">O Menino e a Garça</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">124 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>24 / 66</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/anatomy-of-a-fall.webp" type="image/webp">
+                                        <img src="dist/images/capas/anatomy-of-a-fall.jpg" alt="Anatomia de uma Queda">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Anatomia de uma Queda</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">152 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>18 / 66</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="mask" data-mask="left" aria-hidden="true"></div>
+                        <div class="mask" data-mask="right" aria-hidden="false"></div>
+                    </div>
+                </div>
+
+                <div class="theaters__container__movies" data-day-id="14/04">
+                    <div class="movies__controls">
+                        <h3 class="title-md sm-title-1">Sala - 2</h3>
+                        <div class="controls__buttons">
+                            <button aria-disabled="true" data-to="prev">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                            <button aria-disabled="true" data-to="next">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="movies__slide__container">
+                        <div class="movies__container__cards">
+
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/road-house.webp" type="image/webp">
+                                        <img src="dist/images/capas/road-house.jpg" alt="Matador de Aluguel">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Matador de Aluguel</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">121 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>13 / 66</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/the-social-network.webp" type="image/webp">
+                                        <img src="dist/images/capas/the-social-network.jpg" alt="A Rede Social">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">A Rede Social</h6>
+                                    <div class="icon-r__container" data-active="true">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">121 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>18 / 66</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/x.webp" type="image/webp">
+                                        <img src="dist/images/capas/x.jpg" alt="X Filme">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">X</h6>
+                                    <div class="icon-r__container" data-active="true">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">106 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>12 / 66</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/pearl.webp" type="image/webp">
+                                        <img src="dist/images/capas/pearl.jpg" alt="Pearl">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Pearl</h6>
+                                    <div class="icon-r__container" data-active="true">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">102 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>15 / 66</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/maxxxine.webp" type="image/webp">
+                                        <img src="dist/images/capas/maxxxine.jpg" alt="Maxxxine">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Maxxxine</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">109 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>24 / 66</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/back-to-black.webp" type="image/webp">
+                                        <img src="dist/images/capas/back-to-black.jpg" alt="back-to-black">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Back to Black</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">122 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>14 / 66</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="mask" data-mask="left" aria-hidden="true"></div>
+                        <div class="mask" data-mask="right" aria-hidden="false"></div>
+                    </div>
+                </div>
+
+                <div class="theaters__container__movies" data-day-id="15/04">
+                    <div class="movies__controls">
+                        <h3 class="title-md sm-title-1">Sala - 2</h3>
+                        <div class="controls__buttons">
+                            <button aria-disabled="true" data-to="prev">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                            <button aria-disabled="true" data-to="next">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="movies__slide__container">
+                        <div class="movies__container__cards">
+
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/furiosa.webp" type="image/webp">
+                                        <img src="dist/images/capas/furiosa.jpg" alt="Furiosa">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Furiosa</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">140 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>20 / 66</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/ghostbusters.webp" type="image/webp">
+                                        <img src="dist/images/capas/ghostbusters.jpg" alt="Ghostbusters Apocalipse de Gelo">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Ghostbusters Apocalipse de Gelo</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">115 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>14 / 66</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/inside-out-2.webp" type="image/webp">
+                                        <img src="dist/images/capas/inside-out-2.jpg" alt="Divertidamente 2">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Divertidamente 2</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">102 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>12 / 66</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/dune.webp" type="image/webp">
+                                        <img src="dist/images/capas/dune.jpg" alt="Duna - Parte 2">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Duna - Parte 2</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">167 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>19 / 66</span>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="mask" data-mask="left" aria-hidden="true"></div>
+                        <div class="mask" data-mask="right" aria-hidden="false"></div>
+                    </div>
+                </div>
+
+                <div class="theaters__container__movies" data-day-id="16/04">
+                    <div class="movies__controls">
+                        <h3 class="title-md sm-title-1">Sala - 2</h3>
+                        <div class="controls__buttons">
+                            <button aria-disabled="true" data-to="prev">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                            <button aria-disabled="true" data-to="next">
+                                <svg>
+                                    <use xlink:href="dist/icons/symbol/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="movies__slide__container">
+                        <div class="movies__container__cards">
+
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/zone-of-interest.webp" type="image/webp">
+                                        <img src="dist/images/capas/zone-of-interest.jpg" alt="Zona de Interesse">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Zona de Interesse</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">105 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>13 / 66</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/mother-instinct.webp" type="image/webp">
+                                        <img src="dist/images/capas/mother-instinct.jpg" alt="Instinto de Mãe">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Instinto de Mãe</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">94 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>12 / 66</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/spirited-away.webp" type="image/webp">
+                                        <img src="dist/images/capas/spirited-away.jpg" alt="Spirited Away">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Spirited Away</h6>
+                                    <div class="icon-r__container" data-active="true">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">125 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>12 / 66</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__image">
+                                    <picture>
+                                        <source srcset="dist/images/capas/challengers.webp" type="image/webp">
+                                        <img src="dist/images/capas/dona-lurdes.jpg" alt="Challengers">
+                                    </picture>
+                                </div>
+                                <div class="card__title__container">
+                                    <h6 class="card__title">Challengers</h6>
+                                    <div class="icon-r__container" data-active="false">
+                                        <span>R</span>
+                                    </div>
+                                </div>
+                                <p class="card__time">131 mins</p>
+                                <div class="card__seats__container" data-number-seat="success">
+                                    <svg>
+                                        <use xlink:href="dist/icons/symbol/sprite.svg#armchair"></use>
+                                    </svg>
+                                    <span>14 / 66</span>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="mask" data-mask="left" aria-hidden="true"></div>
                         <div class="mask" data-mask="right" aria-hidden="false"></div>
@@ -326,7 +1054,7 @@
             </div>
         </section>
 
-        <section class="watch-anywhere section">
+        <section class="watch-anywhere section" id="plans">
             <h2 class="title-lg sm-title-2">Assista onde quiser até mesmo no cinema!</h2>
             <div class="watch-anywhere__container">
                 <div class="watch-anywhere__info">
@@ -467,7 +1195,7 @@
                     <div class="input__container">
                         <input type="email" id="email" placeholder=" ">
                         <label for="email">Digite seu email</label>
-                        <p class="error__text">Insira um email válido</p>
+                        <span class="error__text">Insira um email válido</span>
                     </div>
                     <button class="btn-primary btn-success btn__newsletter" disabled>INSCREVER-SE</button>
                 </form>
@@ -526,6 +1254,129 @@
                 <p class="copyrights">©2024 Films Cinemas. Feito por Nicolas Floriano.</p>
             </div>
         </footer>
+
+        <div class="popup popup-requisition" data-active="false">
+            <div class="popup__container">
+                <svg class="popup___close-btn">
+                    <use xlink:href="dist/icons/symbol/sprite.svg#cancel"></use>
+                </svg>
+                <div class="popup__first-part">
+                    <h2 class="title-md">Requisições</h2>
+                    <p class="text-md">
+                        As requisições são o que fazem do nosso cinema um lugar especial. Com elas, você tem a oportunidade de ver um de seus filmes favoritos na tela grande.
+                    </p>
+                </div>
+                <div class="popup__second-part">
+                    <h3 class="title-sm">Como funciona?</h3>
+                    <p class="text-md">Para fazer uma requisição, você precisa de fichas, que podem ser obtidas ao se tornar um assinante ou compradas separadamente.</p>
+                    <p class="text-md">Com o sua ficha, você pode escolher entre os filmes disponíveis em nosso catálogo. Depois de selecionar o filme desejado, ele será programado para exibição no cinema, mas é necessário que pelo menos 15 ingressos sejam adquiridos para confirmar a exibição.</p>
+                </div>
+                <div class="popup__btn__container">
+                    <a href="#plans" class="btn-primary btn-plan">PLANOS</a>
+                    <button class="btn-primary btn-ticket">FICHAS</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup popup-login" data-active="false">
+            <div class="popup__container">
+                <svg class="popup___close-btn">
+                    <use xlink:href="dist/icons/symbol/sprite.svg#cancel"></use>
+                </svg>
+
+                <div class="login__video__section">
+                    <div class="video__bg__container">
+                        <video autoplay playsinline preload="auto" class="login__video__trailer" muted>
+                            <source src="" type="video/mp4" >
+                        </video>
+                    </div>
+
+                    <div class="video__content__container">
+                        <div class="login__header__container">
+                            <div class="title__container">
+                                <h3></h3>
+                                <div class="stars__container" data-star="" data-clip="">
+                                </div>
+                            </div>
+                            <div class="logo__container">
+                                <a href="" target="_blank">
+                                    <img src="dist/images/letterboxd.svg" alt="Letterboxd logo">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="icons__video__container" data-behavior="none">
+                        <svg class="play">
+                            <use xlink:href="dist/icons/symbol/sprite.svg#play"></use>
+                        </svg>
+                        <svg class="pause">
+                            <use xlink:href="dist/icons/symbol/sprite.svg#pause"></use>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="login__form__section">
+                    <h2>Bem vindo de volta!</h2>
+                    <form class="form__container">
+                        <div class="input__container">
+                            <input type="email" id="email__login" placeholder=" ">
+                            <label for="email__login">Digite seu email</label>
+                            <span class="error__text">Insira um email válido</span>
+                        </div>
+                        <div class="input__container">
+                            <input type="password" id="password" placeholder=" ">
+                            <label for="password">Digite sua senha</label>
+                        </div>
+
+                        <div class="form__forget__passwrod">
+                            <div class="remember__me">
+                                <input type="checkbox" id="remember">
+                                <label for="remember">Lembrar de mim</label>
+                            </div>
+                            <a>Esqueceu a senha?</a>
+                        </div>
+                        <button class="btn-primary btn-success">ENTRAR</button>
+                    </form>
+
+                    <div class="login__register">
+                        <p>Ainda não tem uma conta?</p>
+                        <a>Inscreva-se</a>
+                    </div>
+
+                    <div class="login__social-medias">
+                        <span>ou</span>
+                        <button class="btn-primary btn__google">
+                            <svg>
+                                <use xlink:href="dist/icons/symbol/sprite.svg#googleb"></use>
+                            </svg>
+                            Continue com Google
+                        </button>
+                        <button class="btn-primary btn__facebook">
+                            <svg>
+                                <use xlink:href="dist/icons/symbol/sprite.svg#facebookb"></use>
+                            </svg>
+                            Continue com Facebook
+                        </button>
+                        <button class="btn-primary btn__apple">
+                            <svg>
+                                <use xlink:href="dist/icons/symbol/sprite.svg#appleb"></use>
+                            </svg>
+                            Continue com Apple
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="notification" data-active="false">
+            <div class="notification__container">
+                <svg class="notification__icon">
+                    <use xlink:href="dist/icons/symbol/sprite.svg#info"></use>
+                </svg>
+                <p class="text-md">Ainda estamos trabalhando nesta funcionalidade.</p>
+            </div>
+        </div>
     </body>
 
 </html>

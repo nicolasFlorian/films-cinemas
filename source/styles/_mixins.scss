@@ -71,12 +71,8 @@
 @mixin button-success{
     background: linear-gradient(120deg, #2AD755, #00C030, #2AD755,
     #00C030, #2AD755, #00C030, #2AD755);
-    background-size: 500% 500%;
+    background-size: 1000% 1000%;
     transition: opacity 0.3s ease;
     border-radius: 4px;
-
-    &:hover {
-        animation: gradient 4s ease infinite;
-        opacity: 1;
-    }
+    animation: gradient 8s ease infinite alternate;
 };

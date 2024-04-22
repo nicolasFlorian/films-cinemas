@@ -1,0 +1,30 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'functions' as f;
+@use 'animations';
+
+.notification{
+    position: fixed;
+    bottom: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 35;
+    animation: slideInY 0.5s forwards;
+    padding: 0 15px;
+
+    &__container{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: v.$warning-color;
+        padding: 14px 16px;
+        border-radius: 4px;
+        box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.5s forwards;
+    }
+}
+
+.notification[data-active='false']{
+    display: none;
+}

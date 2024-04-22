@@ -39,6 +39,10 @@
                     max-width: 350px;
                     gap: f.rem(16);
                 }
+
+                @include m.breakpoint('md'){
+                    max-width: 600px;
+                }
             }
         }
 

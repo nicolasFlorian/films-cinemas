@@ -48,6 +48,12 @@
                     grid-column: 2 / 3;
                 }
             }
+            @include m.breakpoint('md'){
+                .footer__languages__container{
+                    grid-column: span 2;
+                    width: 70% !important;
+                }
+            }
 
             li a{
                 color: v.$secondary-color;

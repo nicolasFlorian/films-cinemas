@@ -7,6 +7,7 @@ const fs = require('fs');
 const cheerio = require('gulp-cheerio');
 const { exec } = require('child_process');
 const spriteSvg = require('gulp-svg-sprite');
+const path = require('path');
 
 let autoprefixer;
 let imageReduction;
@@ -67,14 +68,14 @@ async function imageMin(cb){
 }
 
 
-function videoMin(cb){
+function mergeVideo(cb){
     const hideFiles = ['.DS_Store', 'list.txt']
 
-    fs.readdir('./source/videos', (_, files) =>{
+    fs.readdir('./source/videos/hero', (_, files) =>{
         const filteredFiles = files.filter(file => !hideFiles.includes(file));
         const data = filteredFiles.map(file => `file '${file}'`).join('\n')
 
-        fs.writeFile('./source/videos/list.txt', data, (err) => {
+        fs.writeFile('./source/videos/hero/list.txt', data, (err) => {
             if(err) throw err;
             console.log('The list has been created')
             checkOutput();
@@ -82,7 +83,7 @@ function videoMin(cb){
     })
 
     function checkOutput(){
-        const outputFile = './dist/videos/output.mp4';
+        const outputFile = './dist/videos/hero/output.mp4';
 
         fs.access(outputFile, (err) =>{
             if(!err){
@@ -98,7 +99,7 @@ function videoMin(cb){
     }
 
     function mergeVideos(){
-        const command = 'ffmpeg -f concat -safe 0 -i ./source/videos/list.txt -c:v libx264 -crf 25 -preset fast -s 1920x1080 -an ./dist/videos/output.mp4'
+        const command = 'ffmpeg -f concat -safe 0 -i ./source/videos/hero/list.txt -c:v libx264 -crf 25 -preset fast -s 1920x1080 -an ./dist/videos/hero/output.mp4'
         exec(command, (err, stdout, stderr) => {
             if (err){
                 console.error(`exec error: ${err}`)
@@ -112,7 +113,7 @@ function videoMin(cb){
     }
 
     function cleanUp(){
-        fs.unlink('./source/videos/list.txt', (err) => {
+        fs.unlink('./source/videos/hero/list.txt', (err) => {
             if (err) throw err;
             console.log('list.txt was deleted');
             cb();
@@ -120,6 +121,38 @@ function videoMin(cb){
     }
 }
 
+function minVideo(cb){
+    const outputDir = './dist/videos/login/';
+
+    fs.readdir(outputDir, (err, files) => {
+        if (err) throw err;
+    
+        if (files.length > 0) {
+            for (const file of files) {
+                fs.unlink(path.join(outputDir, file), err => {
+                    if (err) throw err;
+                });
+            }
+        }
+    
+        minimizeVideos();
+    });
+
+    function minimizeVideos(){
+        const command = `for i in ./source/videos/login/*.mp4; do ffmpeg -i "$i" -vf "scale=-1:1920,crop=1080:1920:1150:0" -c:v libx264 -crf 20 -preset fast -an ./dist/videos/login/$(basename "$i"); done`;
+        exec(command, (err, stdout, stderr) => {
+            if (err){
+                console.error(`exec error: ${err}`);
+                cb();
+            } else {
+                console.log(`stdout: ${stdout}`);
+                console.error(`stderr: ${stderr}`);
+                console.log('The videos were compressed');
+                cb();
+            }
+        });
+    }
+}
 
 function jsConcat(){
     return gulp.src('./source/scripts/**/*.js')
@@ -149,15 +182,17 @@ function gulpWatch(){
     gulp.watch('./source/styles/**/*.scss', sassComp);
     gulp.watch('./source/scripts/**/*.js', jsConcat);
     gulp.watch('./source/images/**/*', imageMin);
-    gulp.watch('./source/videos/**/*', videoMin);
+    gulp.watch('./source/videos/hero/*', mergeVideo);
     gulp.watch('./source/icons/**/*.svg', svgSprite);
+    gulp.watch('./source/videos/login/*', minVideo);
 }
 
-exports.build = gulp.parallel(sassComp, imageMin, videoMin, jsConcat);
+exports.build = gulp.parallel(sassComp, imageMin, mergeVideo, jsConcat);
 exports.default = gulp.parallel(gulpWatch);
 
 exports.sass = sassComp;
 exports.js = jsConcat;
 exports.image = imageMin;
-exports.video = videoMin;
+exports.mergeVideo = mergeVideo;
 exports.sprite = svgSprite;
+exports.minVideo = minVideo;
