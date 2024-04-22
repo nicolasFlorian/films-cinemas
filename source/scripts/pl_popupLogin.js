@@ -75,7 +75,7 @@ function createStars(){
     for (let i = 0; i < howManyStars; i++){
         const star = CreteElements(`
         <svg class="star">
-            <use xlink:href="dist/icons/symbol/sprite.svg#star"></use>
+            <use xlink:href="dist/icons/normal/symbol/sprite.svg#star"></use>
         </svg>
         `)
         starContainer.appendChild(star);

@@ -14,6 +14,8 @@
 @use 'notification';
 @use 'popup-movie';
 @use 'popup-login';
+@use 'popup-ticket';
+@use 'popup-checkout';
 
 html{
     scroll-behavior: smooth;

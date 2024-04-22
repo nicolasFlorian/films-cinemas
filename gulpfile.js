@@ -164,7 +164,7 @@ function jsConcat(){
 }
 
 function svgSprite(){
-    return gulp.src('./source/icons/**/*.svg')
+    return gulp.src('./source/icons/normal/*.svg')
     .pipe(spriteSvg(config))
     .pipe(cheerio({
         run: ($) => {
@@ -172,10 +172,18 @@ function svgSprite(){
         },
         parserOptions: {xmlMode: true}
     }))
-    .pipe(gulp.dest('./dist/icons'));
+    .pipe(gulp.dest('./dist/icons/normal'));
 }
 
 exports.sprite = svgSprite;
+
+function svgSpritePayment(){
+    return gulp.src('./source/icons/payment/*.svg')
+    .pipe(spriteSvg(config))
+    .pipe(gulp.dest('./dist/icons/payment'));
+}
+
+exports.spritePayment = svgSpritePayment;
 
 
 function gulpWatch(){
@@ -183,8 +191,9 @@ function gulpWatch(){
     gulp.watch('./source/scripts/**/*.js', jsConcat);
     gulp.watch('./source/images/**/*', imageMin);
     gulp.watch('./source/videos/hero/*', mergeVideo);
-    gulp.watch('./source/icons/**/*.svg', svgSprite);
+    gulp.watch('./source/icons/normal/*.svg', svgSprite);
     gulp.watch('./source/videos/login/*', minVideo);
+    gulp.watch('./source/icons/payment/*.svg', svgSpritePayment);
 }
 
 exports.build = gulp.parallel(sassComp, imageMin, mergeVideo, jsConcat);

@@ -2,6 +2,11 @@ const mc_cards = document.querySelectorAll('.plan__card');
 
 mc_cards.forEach(card => {
     animateCard(card)
+
+    const giftBtn = card.querySelector('.btn-gift');
+    giftBtn.addEventListener('click', () => {
+        showNotification();
+    })
 })
 
 function animateCard(card) {
